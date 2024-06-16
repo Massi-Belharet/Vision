@@ -1,0 +1,83 @@
+\newpage
+\section{Conception et réalisation du projet}
+\label{sec:impl}
+
+\subsection{Architecture globale du logiciel}
+\paragraph{} Dans la figure \ref{fig:architecture}, on peut voir un shéma general du logiciel.
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=3.5cm, height=2cm]{images/programmer.png}
+%\caption{Un programmeur occupé}
+%\label{fig:modele}
+%\end{figure}
+
+\fig{images/Schema_Generale.png}{15cm}{7cm}{Architecture}{architecture}
+
+\subsection{Conception des classes de données}
+\paragraph{}Afin de garantir le bon fonctionnement de notre système de traitement d’images et de détection d’incidents, nous avons élaboré plusieurs classes de données fondamentales. Ces classes jouent un rôle crucial dans la manipulation et le stockage des informations nécessaires à l'analyse des images capturées par le drone. Voici un aperçu des principales classes de données que nous avons implémentées pour répondre aux besoins spécifiques de notre projet.
+\paragraph{Classes de données}
+\begin{enumerate}
+ \item \textbf{Classe Coordinates : }La classe Coordinates représente les
+coordonnées d'un point sur le terrain, avec des attributs pour les
+coordonnées x et y ainsi que les coordonnées de la zone correspondante.
+Ces coordonnées sont utilisées pour localiser des éléments spécifiques
+dans l'image capturée par le drone.
+ \item \textbf{Classe DataHolder :} La classe DataHolder est utilisée pour stocker
+une liste d'éléments détectés sur le terrain. Elle fournit des méthodes pour
+ajouter des éléments à la liste et pour afficher le contenu de la liste. C'est
+une composante importante pour conserver les données générées par le
+moteur de traitement.
+ \item  \textbf{Classe Element :} La classe Element représente un élément du terrain
+avec ses coordonnées et son type. Elle est utilisée pour encapsuler les
+informations sur chaque élément détecté, facilitant ainsi leur
+manipulation et leur stockage dans le DataHolder.
+ \item \textbf{Classe Fire :}  La classe Fire est une sous-classe de Element qui
+représente spécifiquement un feu sur le terrain. Elle utilise les
+coordonnées fournies pour créer un élément de type "fire", permettant
+ainsi au moteur de traitement de reconnaître et de manipuler les feux
+détectés trouvés dans les images.
+\item \textbf{Classe Pathole :} La classe Pathole représente un trou ou une anomalie sur le chemin, fournissant des détails sur sa position et son état.
+\item \textbf{Classe Person : }La classe Person représente une personne se déplaçant dans la zone qui n'est pas affecté affectée par l'incendie, avec des attributs pour sa position et son mouvement dynamique.
+\end{enumerate}
+\subsection{Conception des traitements (processus)}
+\paragraph{}Pour permettre au système de détecter efficacement les feux et d’effectuer des analyses statistiques pertinentes, nous avons développé plusieurs classes de traitement essentielles. Ces classes jouent un rôle central dans le processus de traitement des images capturées par le drone, fournissant des fonctionnalités de détection des feux et de calcul des statistiques associées. Voici un aperçu des principales classes de traitement que nous avons implémentées pour répondre aux besoins spécifiques de notre projet.
+\paragraph{Classes de traitement}  
+\begin{enumerate}
+
+\item \textbf{Classe FireScenario :} La classe FireScenario gère la simulation de l'évolution de l'incendie dans la zone, prenant en compte les mouvements du feu et ses interactions avec les éléments environnants.
+\item \textbf{Classe RoadScenario :} La classe RoadScenario simule les conditions de la route dans la zone affectée par l'incendie, fournissant des informations sur les obstacles potentiels et les voies de dégagement.
+
+\item \textbf{Classe ElementDetector :} La classe ElementDetector identifie et extrait les différents éléments présents dans les images capturées, tels que les feux, les personnes, les obstacles, etc.
+\item \textbf{Classe GeometryDetection :} La classe GeometryDetection analyse la géométrie des éléments détectés pour fournir des informations sur leur forme, leur taille et leur disposition spatiale.
+
+\item \textbf{Classe Statistics :}  La classe Statistics est utilisée pour calculer
+diverses statistiques liées à la détection des éléments dans les images
+capturées par le drone, tels que le nombre total d'éléments détectés
+(comme les feux) et le pourcentage de feux par rapport au nombre total
+d'éléments détectés. Cette classe peut être étendue pour inclure d'autres
+statistiques pertinentes selon les besoins du projet, fournissant ainsi une
+analyse approfondie des éléments détectés.
+\end{enumerate}
+
+%%% Une autre façon pour écrire un algorithme %%%
+%\begin{algorithm}[H]
+ %\KwData{this text}
+ %\KwResult{how to write algorithm with \LaTeX2e }
+ %initialization\;
+ %\While{not at end of this document}{
+  %read current\;
+  %\eIf{understand}{
+   %go to next section\;
+   %current section becomes this one\;
+   %}{
+   %go back to the beginning of current section\;
+  %}
+ %}
+ %\caption{How to write algorithms}
+%\end{algorithm}
+
+\subsection{Conception de l'IHM graphique}
+
+\paragraph{} Dans cette section, nous expliquons notre approche de conception de l'IHM pour notre projet. L'IHM est essentielle pour l'interaction utilisateur, et notre objectif est de créer une interface intuitive et efficace. Nous utiliserons des schémas abstraits pour illustrer la disposition et le flux des éléments de l'IHM.
+\fig{images/Schema_IHM.png}{8cm}{7cm}{shema IHM home page }{HomePage}

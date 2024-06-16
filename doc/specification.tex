@@ -1,0 +1,108 @@
+\newpage
+\section{Spécification du projet}
+\label{sec:specification}
+
+\paragraph{} Nous avons présenté l'objectif du projet dans la section \ref{sec:introduction}. Dans cette section, nous présentons la spécification de notre logiciel réalisé.
+
+\subsection{Notions de base et contraintes du projet}
+\paragraph{}
+
+Dans ce Projet, nous avons opté pour des techniques de traitement d'images avec des pixels, des couleurs et des formes, plutôt que d'utiliser des outils tels qu'OpenCV et YOLO. Ce choix a été motivé par notre volonté de développer des méthodes spécifiques répondant précisément aux besoins du projet, notamment la détection des trous dans les rues.
+
+\paragraph{Détection des incendies :} 
+
+Pour la segmentation d'images, nous avons développé des algorithmes internes pour isoler les zones potentiellement en feu, en utilisant des techniques de seuillage, de détection de contours et d'autres méthodes d'analyse des formes.
+L'analyse des couleurs et des températures est réalisée afin de détecter les signes d'incendie dans les zones segmentées, en extrayant des caractéristiques pertinentes de couleur et de texture pour identifier les zones chaudes.
+Pour la classification des incendies, nous avons développé des modèles spécifiques pour la détection des incendies en utilisant des données annotées, sans recourir à YOLO.
+L'estimation du pourcentage d'incendie est effectuée à partir des zones détectées en feu, en utilisant des techniques de traitement d'images pour estimer la superficie des zones en feu et les comparer avec la superficie totale du terrain,Nous avons rajouté des personnes qui se déplacent dans les zones tout en évitant les incendies pour que la simulation soit la plus réaliste possible .
+\paragraph{Évaluation de l'état des routes : } 
+
+La détection des fissures est réalisée en utilisant des algorithmes de détection de contours et des techniques de seuillage pour repérer les anomalies dans la surface de la route, sans recourir à OpenCV.
+Le suivi des fissures et l'analyse de densité sont effectués en implémentant des algorithmes internes pour suivre les fissures détectées au fil du temps et analyser leur densité,et les angles des trous dans différentes zones de la route.
+L'identification des zones critiques est réalisée en développant des algorithmes spécifiques pour détecter les zones présentant un grand nombre de fissures ou des fissures de grande taille, en utilisant des techniques de traitement d'images pour l'analyse de motifs et la détection des fissures.
+Enfin, la simulation en temps réel revêt une importance capitale pour assurer la réactivité du drone dans la détection des incidents, permettant ainsi des actions préventives ou correctives en temps opportun.
+\label{sec:spec1}
+
+\subsubsection{Fonctionnement général du logiciel}
+\paragraph{}En utilisant des techniques avancées de traitement d'images, le logiciel permet au drone de remplir sa mission spécifique avec efficacité et précision. Et parmis les principales fonctionnalités offertes par cette application innovante : 
+\begin{enumerate}
+    \item \textbf{Capture et Traitement des Images :} Le logiciel permet au drone volant de capturer en continu des images du terrain. Ces images sont ensuite traitées en utilisant des techniques avancées de traitement d'images tel que la technique des pixels .
+
+    \item \textbf{Détection des Incendies : }À l'aide des algorithmes développés, le logiciel est capable de détecter les zones potentiellement en feu dans les images capturées. Il utilise des techniques d'analyse de couleurs pour identifier les signes d'incendie.
+
+     \item \textbf{Évaluation de l'État des Routes :} Une fonctionnalité importante du logiciel est d'évaluer l'état des routes en détectant les fissures et autres défauts. Il utilise des algorithmes spécifiques pour repérer ces anomalies, permettant ainsi une maintenance préventive des routes.
+
+    \item \textbf{Rapports Détaillés :} Le logiciel génère des rapports clairs et compréhensibles pour chaque incident détecté. Ces rapports fournissent des informations détaillées sur les zones en feu  et les défauts des routes.
+
+   \item \textbf{Personnalisation Flexible :} Le système est conçu pour être adaptable aux besoins spécifiques du client et de son environnement. Il offre des options de personnalisation pour répondre aux exigences particulières de chaque utilisateur.
+   
+\end{enumerate}
+\subsubsection{Notions et termonologies de base}
+
+
+Dans cette section, nous introduisons les concepts et termes fondamentaux utilisés dans le cadre du projet "VISION". Il est essentiel de comprendre ces notions pour appréhender pleinement le fonctionnement et les objectifs du logiciel. Voici quelques-unes des notions clés abordées :
+\begin{enumerate}
+    \item \textbf{Traitement d'images :} Ce terme fait référence à un ensemble de techniques et d'algorithmes utilisés pour analyser, manipuler et interpréter des images numériques. Le traitement d'images est au cœur du projet, permettant au système de détecter et d'analyser les incidents sur le terrain.
+
+
+\item \textbf{Détection d'incendies : }Ce processus implique la reconnaissance automatique des zones en feu dans les images capturées par le drone. Il repose sur l'analyse des couleurs pour identifier les signes caractéristiques d'un incendie.
+
+
+\item \textbf{Évaluation de l'état des routes :} Il s'agit d'analyser les images des routes pour détecter les fissures qui pourraient compromettre la sécurité routière. Cette évaluation permet de planifier des travaux de maintenance préventive pour assurer la qualité des routes.
+
+\item \textbf{Interface utilisateur : }C'est la partie du logiciel avec laquelle l'utilisateur interagit. Elle permet de visualiser les résultats des analyses, de configurer les paramètres du système et d'effectuer différentes actions en fonction des besoins.
+
+\item \textbf{Algorithme de traitement d'images :} Un algorithme spécifique utilisé pour effectuer des opérations de traitement d'images, telles que la segmentation, la détection d'objets et couleurs. Ces algorithmes sont conçus pour répondre aux exigences spécifiques du projet.
+\end{enumerate} 
+En comprenant ces notions de base et en maîtrisant leur terminologie, les utilisateurs seront mieux équipés pour utiliser efficacement le logiciel et interpréter ses résultats.
+\subsubsection{Contraintes et limitations connues}
+
+\paragraph{Premier paragraphe :}Les contraintes et limitations du projet "VISION" constituent des aspects cruciaux à considérer tout au long de son développement. Ces contraintes définissent les paramètres dans lesquels le projet doit opérer et peuvent avoir un impact significatif sur sa faisabilité, sa planification et ses résultats finaux. 
+
+\paragraph{} Il est important de noter que nous avons été restreints dans l'utilisation de l'intelligence artificielle, car cela aurait impliqué une automatisation complète des tâches, ce qui n'était pas conforme aux exigences du projet fixées par le professeur. 
+
+\paragraph{} Par conséquent,nous avons dû adopter une approche basée sur le traitement d'images par pixels, en mettant l'accent sur l'analyse des couleurs et des formes pour détecter les incidents sur le terrain.
+
+\paragraph{Deuxième paragraphe :}
+
+Parmi les autres contraintes et limitations à prendre en considération, nous rencontrons tout d'abord des contraintes de temps. Le délai alloué pour le développement du projet peut être relativement restreint, nécessitant ainsi une planification minutieuse et une gestion efficace des tâches afin de respecter les échéances fixées. De plus, la disponibilité et la qualité des données d'entraînement constituent une autre contrainte majeure. La nature limitée ou la qualité variable de ces données peuvent avoir un impact direct sur les performances du système de détection, influant ainsi sur sa capacité à identifier de manière précise les incidents sur le terrain.
+Enfin, l'assurance de la compatibilité logicielle représente une autre contrainte importante. Le projet implique souvent l'utilisation de différents logiciels et composants qui doivent être intégrés de manière transparente pour assurer le bon fonctionnement du système dans son ensemble. Cette compatibilité nécessite une attention particulière pour éviter les conflits ou les incompatibilités entre les différents éléments du système logiciel.
+
+\paragraph{} Outils de développement:
+\begin{enumerate}
+\item Java
+\item Eclipse
+\item Latex
+\end{enumerate}
+
+\subsection{Fonctionnalités attendues du projet}
+\label{sec:spec2}
+
+\paragraph{} Fonctionnalités du programme:
+\begin{itemize}
+\item \textbf{Détection des incendies :} Le système repère les zones en feu et alerte immédiatement les autorités compétentes.
+\item \textbf{Évaluation des routes :} Les fissures et autres défauts sont détectés pour une maintenance préventive des routes.
+\item \textbf{Rapports détaillés :} Des rapports clairs et compréhensibles sont générés pour chaque incident détecté.
+\item \textbf{Personnalisation flexible :} Le système peut être adapté aux besoins spécifiques du client et de son environnement.
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular} {|p{3.5cm}|p{2.5cm}|p{5cm}|}
+\hline
+Document & Coefficient & Commentaire \\
+
+\hline
+Rapport & 62.5\% & Rapport complet décrivant les étapes de développement, les résultats obtenus et les conclusions tirées. \\
+\hline
+Readme.txt & 37.5\% & Document détaillant spécifications du projet et le Manuel Utilisateur . \\
+\hline
+\end{tabular}
+\caption{Documents à remettre}
+\label{tab:document}
+\end{table}
+
+Comme ce qui est illustré dans le tableau \ref{tab:document},les documents à remettre comprennent le readme.txt , qui représente 37.5% 
+de l'évaluation totale, et le rapport final du projet, qui représente 62.5% 
+de l'évaluation totale.
+

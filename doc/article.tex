@@ -1,0 +1,67 @@
+%%Définir le format du document: papier, taille de police, type de document, etc.
+
+\documentclass[11pt, french]{article}
+
+%%%%%%%%%% Packages externes utilisés %%%%%%%%%%%%%%%%%%%
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{macro}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{algorithm2e}
+
+
+%La mise en page du rapport, NE PAS MODIFIER.
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm,
+ }
+
+%%%%%%%%% Le corps du document entre begin et end %%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%Page de garde
+\input{titre.tex}
+
+%Génération automatique de la table des matières, de la liste des figures et de la liste des tableaux
+\tableofcontents
+\listoffigures
+\listoftables
+
+%Une section "remerciements" pourrait être intéressante. C'est une section sans numérof (avec un * )
+
+\newpage
+\section* {Remerciements}
+\paragraph{}
+Tout d'abord, nous tenons à remercier chaleureusement notre professeur Tianxiao LIU  pour ses conseils éclairés, son expertise précieuse et son soutien constant. Ses encouragements et ses orientations nous ont été d'une aide inestimable dans la réalisation de ce projet.
+\paragraph{}
+Nous adressons également nos remerciements à notre Université CY  pour avoir mis à notre disposition les ressources nécessaires, ainsi qu'à tout le personnel administratif qui a facilité le bon déroulement de notre travail.
+\paragraph{}
+Nos sincères remerciements vont également à nos camarades de classe et à tous ceux qui ont contribué de près ou de loin à ce projet. Leur collaboration et leur soutien ont été essentiels pour surmonter les défis rencontrés et pour mener à bien chaque étape du développement.
+\paragraph{}
+Enfin, nous exprimons notre reconnaissance envers nos familles et nos proches pour leur soutien indéfectible, leur patience et leur encouragement tout au long de ce parcours.
+\paragraph{}
+Nous sommes reconnaissants envers toutes les personnes et les institutions qui ont contribué de quelque manière que ce soit à la réalisation de ce projet. Merci à tous.
+
+\input{introduction.tex}
+\input{specification.tex}
+\input{realisation.tex}
+\input{manuel.tex}
+\input{deroulement.tex}
+\input{conclusion.tex}
+
+\newpage
+
+\nocite{*}
+
+\end{document}
